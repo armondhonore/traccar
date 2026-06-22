@@ -1,0 +1,15 @@
+application:
+  name: traccar
+  pods:
+  - name: app
+    image: traccar/traccar:latest
+    path: /
+    servicePorts:
+    - 8082
+    volumes:
+    - name: traccar-logs
+      mountPath: /opt/traccar/logs
+      size: 2Gi
+    - name: traccar-data
+      mountPath: /opt/traccar/data
+      size: 10Gi
